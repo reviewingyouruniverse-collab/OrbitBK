@@ -988,7 +988,7 @@ export default function App(){
           <div style={{display:"flex",gap:8,marginBottom:14}}>
             {[{ph:"MM",v:mm,s:setMm,mx:2,ac:"bday-month"},{ph:"DD",v:dd,s:setDd,mx:2,ac:"bday-day"},{ph:"YYYY",v:yyyy,s:setYyyy,mx:4,ac:"bday-year"}].map((f,i)=>(
               <input key={i} placeholder={f.ph} value={f.v} maxLength={f.mx} inputMode="numeric" autoComplete={f.ac} onChange={e=>{if(/^\d*$/.test(e.target.value))f.s(e.target.value);}}
-                style={{flex:f.ph==="YYYY"?2:1,background:"#1A1208",border:"1px solid #3A2A14",borderRadius:8,padding:"12px 6px",color:"#EDE0CE",fontSize:17,textAlign:"center"}}/>
+                style={{flex:f.ph==="YYYY"?2:1,minWidth:0,background:"#1A1208",border:"1px solid #3A2A14",borderRadius:8,padding:"12px 6px",color:"#EDE0CE",fontSize:17,textAlign:"center"}}/>
             ))}
           </div>
           {ageErr&&<div style={{fontSize:14,color:"#D06060",marginBottom:14,background:"#2A1010",border:"1px solid #5A2020",borderRadius:8,padding:"8px 12px"}}>{ageErr}</div>}
