@@ -619,7 +619,7 @@ function ProfilePage({profile,joined,chapterProg,identity,onBack,onLogout}){
 }
 
 // ── Landing Page ──────────────────────────────────────────────────
-function LandingPage({onJoin,onSignIn}){
+function LandingPage({onJoin,onSignIn,clubLine}){
   const reviews=[
     {avatar:"🦋",user:"bookish_introvert",city:"Raleigh",text:"I've never felt this comfortable talking about books online. The small rooms changed everything."},
     {avatar:"🌙",user:"moonreader_k",city:"Durham",text:"Orbit is the first book community that actually feels like a community."},
@@ -979,7 +979,7 @@ export default function App(){
   const bgStyle={background:"#0D0A06",minHeight:"100vh",fontFamily:"'Crimson Text',Georgia,serif",color:"#EDE0CE",position:"relative"};
   const cosmicBg=<><Stars count={55}/><CosmicBackground/><div style={{position:"fixed",inset:0,pointerEvents:"none",zIndex:0,background:"radial-gradient(ellipse at 50% 0%,#C4870010 0%,transparent 60%)"}}/></>;
 
-  if(screen==="landing") return <><style>{css}</style><LandingPage onJoin={()=>setScreen("signup")} onSignIn={()=>setScreen("login")}/></>;
+  if(screen==="landing") return <><style>{css}</style><LandingPage onJoin={()=>setScreen("signup")} onSignIn={()=>setScreen("login")}clubLine={clubLine}/></>;
 
   if(screen==="login") return(
     <>
